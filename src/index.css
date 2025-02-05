@@ -1,0 +1,79 @@
+/* Font Families */
+
+/* Lora */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* Tailwind Base Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind Components */
+@layer components {
+    .flex-center-x {
+        @apply flex justify-center items-center;
+    }
+    .flex-center-y {
+        @apply flex justify-center items-center flex-col;
+    }
+    .flex-between-x {
+        @apply flex justify-between items-center;
+    }
+    .flex-between-y {
+        @apply flex justify-between items-center flex-col;
+    }
+    .container-padding{
+        @apply px-4 py-8 md:px-8 md:py-10 lg:px-20 lg:py-12
+    }
+    .con-shadow{
+        box-shadow: 2px 4px 8px rgba(0,0,0,0.2), 2px 4px 12px rgba(0,0,0,0.1);
+    }
+    .btn-transition{
+        @apply duration-300 ease-in-out
+    }
+    .btn-style{
+        @apply bg-blue-500 text-white font-medium text-base px-6 py-3 rounded-full hover:bg-opacity-85 btn-transition gap-2 shadow-xl
+    }
+    .label{
+        @apply text-gray-700 font-lora block xl:text-lg font-medium
+    }
+    .input{
+        @apply w-full bg-gray-200 text-sm lg:text-base placeholder:text-gray-400 placeholder:text-sm rounded-sm px-4 py-2 outline-none border-2 border-transparent focus:border-blue-500 font-light
+    }
+}
+
+/* Customn CSS */
+
+.banner-height{
+    height: calc(100vh - 50px);
+}
+
+.background-image{
+    background-image: url('/assets/banner-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Custom keyframes Navigation Animation */
+.header-effect{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    animation: nav-animation 0.5s ease-in-out;
+}
+@keyframes nav-animation {
+    0%{
+        opacity: 0;
+        transform: translateY(-40px);
+    }100%{
+        opacity: 1;
+        transform: translateY(0);
+    }   
+}
